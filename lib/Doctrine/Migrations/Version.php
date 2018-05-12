@@ -183,6 +183,7 @@ class Version implements VersionInterface
                 $this->configuration->getMigrationsTableName(),
                 [
                     $migrationsColumnName => $this->version,
+                    'createdAt' => (new DateTime())->format('Y-m-d H:i:s'),
                 ]
             );
         } else {

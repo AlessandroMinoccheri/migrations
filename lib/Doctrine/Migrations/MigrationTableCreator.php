@@ -66,6 +66,7 @@ final class MigrationTableCreator
 
         $columns = [
             $migrationsColumnName => $this->getMigrationsColumn(),
+            'createdAt' => new Column('createdAt', Type::getType('datetime'), ['notnull' => false]),
         ];
 
         $table = new Table($migrationsTableName, $columns);
